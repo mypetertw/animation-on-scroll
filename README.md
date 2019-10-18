@@ -9,3 +9,11 @@
 - Based on [animation.css](https://github.com/daneden/animate.css).
 
 ## Usage
+
+```javascript
+<script src="Animation-On-Scroll.js"></script>
+```
+
+```html
+<div class="animated">I'm block</div>
+```
