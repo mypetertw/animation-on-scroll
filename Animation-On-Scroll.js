@@ -1,22 +1,22 @@
 var eles = Array.prototype.slice.call(document.querySelectorAll('.animated'));
-document.addEventListener('scroll', animatedFadeInUp);
-animatedFadeInUp();
+document.addEventListener('scroll', fadeInUp);
+fadeInUp();
 
-function animatedFadeInUp() {
+function fadeInUp() {
     eles = eles.filter(function(ele) {
-        var rect = getRect(ele);
-        if (rect.isVisible) {
+        var block = getBlock(ele);
+        if (block.isVisible) {
             ele.classList.add('fadeInUp');
             return false;
         }
         return true;
     });
-    if (eles.length <= 0) document.removeEventListener('scroll', animatedFadeInUp);
+    if (eles.length <= 0) document.removeEventListener('scroll', fadeInUp);
 }
 
-function getRect(ele) {
+function getBlock(ele) {
     var inHeight = window.innerHeight;
-    var rect = ele.getBoundingClientRect();
-    rect.isVisible = rect.top - inHeight < 0;
-    return rect;
+    var block = ele.getBoundingClientRect();
+    block.isVisible = block.top - inHeight < 0;
+    return block;
 }
