@@ -1,33 +1,11 @@
 # http-request
-### Php script with Curl to send or get json with API.
+### Use Javascript to implementation displays the block according browser scrolling.
 
 ---
 
 ## Getting Started
 
-Put `HttpRequest.php` to your project.
+- Put `Animation-On-Scroll.js` to your project.
+- Based on [animation.css](https://github.com/daneden/animate.css).
 
 ## Usage
-
-### Include HTTP_REQUEST function and post $data with json
-```php
-$data = [
-    "id" => $id,
-    "field" => $field
-];
-$data = HTTP_REQUEST('<https-api-url>', json_encode($data));
-```
-
-### Render data
-
-```php
-echo $data['message']
-```
-
-### Render array data
-
-```php
-foreach ($data as $value) {
-    echo $value['message'];
-}
-```
