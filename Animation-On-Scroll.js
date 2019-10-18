@@ -1,8 +1,8 @@
 var eles = Array.prototype.slice.call(document.querySelectorAll('.animated'));
-document.addEventListener('scroll', fadeInUp);
-fadeInUp();
+document.addEventListener('scroll', animationOnScroll);
+animationOnScroll();
 
-function fadeInUp() {
+function animationOnScroll() {
     eles = eles.filter(function(ele) {
         var block = getBlock(ele);
         if (block.isVisible) {
@@ -11,7 +11,8 @@ function fadeInUp() {
         }
         return true;
     });
-    if (eles.length <= 0) document.removeEventListener('scroll', fadeInUp);
+    
+    if (eles.length <= 0) document.removeEventListener('scroll', animationOnScroll);
 }
 
 function getBlock(ele) {
